@@ -1,0 +1,72 @@
+<div>
+  <form [formGroup]="registerForm">
+    <section class="vh-100 gradient-custom">
+      <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+          <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+            <div class="card bg-dark text-white" style="border-radius: 1rem">
+              <div class="card-body p-5 text-center">
+                <div class="mb-md-5 mt-md-4 pb-5">
+                  <h2 class="fw-bold mb-2 text-uppercase">Üye Ol</h2>
+                  <p class="text-white-50 mb-5">
+                    Sende aramıza katıl, mutluluğuna mutluluk kat.
+                  </p>
+
+                  <div class="form-outline form-white mb-4">
+                    <input
+                      type="text"
+                      formControlName="firstName"
+                      [appValidate]
+                      [isValid]="validate('firstName')"
+                      class="form-control"
+                      id="floatingFirstname"
+                      placeholder="Ad"
+                    />
+                    <label class="form-label" for="type">Adınız</label>
+                  </div>
+
+                  <div class="form-outline form-white mb-4">
+                    <input type="text" formControlName="lastName" [appValidate] [isValid]="validate('lastName')" class="form-control" id="floatingLastname" placeholder="Soyad">
+                    <label class="form-label" for="type">Soyadınız</label>
+                  </div>
+
+                  <div class="form-outline form-white mb-4">
+                    <input type="email" formControlName="email" [appValidate] [isValid]="validate('email')" class="form-control" id="floatingInput" placeholder="Eposta">
+                    <label class="form-label" for="typeEmailX">E-Posta</label>
+                  </div>
+
+                  <div class="form-outline form-white mb-4">
+                    <input type="password" formControlName="password" [appValidate] [isValid]="validate('password')" class="form-control" id="floatingPassword" placeholder="Şifre">
+                    <label class="form-label" for="typePasswordX">Parola</label>
+                  </div>
+
+                  <div class="form-check mb-3">
+                    <input formControlName="confirmedContract" class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
+                    <label class="form-check-label" for="flexCheckIndeterminate"  [appValidate] [isValid]="validate('confirmedContract')">
+                        Sözleşmeyi okudum kabul ediyorum.
+                    </label>
+                </div>
+
+                <br>
+
+                  <button
+                    class="btn btn-outline-light btn-lg px-5"
+                    (click)="register()"
+                  >
+                    Sisteme Üye ol
+                  </button>
+
+                  <br> <br>
+                  <div class="register">
+                    Zaten üye misin?
+                    <a routerLink="/">Giriş yapmak için tıklayın.</a>
+                </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </form>
+</div>
